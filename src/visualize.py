@@ -39,7 +39,7 @@ for in_file in args.input_path:
         keys = [item[0] for item in items[:10]][::-1]
         vals = [item[1] for item in items[:10]][::-1]
 
-        plt.bar(range(len(keys)), vals)
+        plt.bar(range(len(vals)), vals)
         plt.xticks(range(len(keys)), keys)
         plt.ylabel('Number of Tweets')
 
