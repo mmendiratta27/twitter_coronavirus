@@ -18,11 +18,10 @@ import matplotlib.pyplot as plt
 
 # open the input path
 for in_file in args.input_path:
+    with open(in_file) as f:
+        counts = json.load(f)
+
     for in_key in args.key:
-
-        with open(in_file) as f:
-            counts = json.load(f)
-
 # normalize the counts by the total values
         if args.percent:
             for k in counts[in_key]:
@@ -50,4 +49,5 @@ for in_file in args.input_path:
             plt.xlabel('Country Code')
             plt.savefig(in_key[1:] + '_country.png')
        
+        plt.clf()
         
